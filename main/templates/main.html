@@ -38,4 +38,47 @@ Login
     {% endfor %}
   </div>
 
+  <div>
+    <form method ="POST" action="/">
+      {% csrf_token %}
+      <h2>Event Name</h2>
+      <input name="event_name" />
+      <h3>Name of Organization</h3>
+      <input name="name_of_org" />
+      <h4>Date</h4>
+      <input name="date" placeholder="MM/DD/YYYY"/>
+      <h5>Time</h5>
+      <input name="time" placeholder="00:00 AM/PM" />
+      <h6>Location</h6>
+      <input name="location"/>
+      <h7>Description</h7>
+      <input name="description"/>
+      <h8>Ticket Info</h8>
+      <input name="ticket_info"/>
+      <h9>Social Media</h9>
+      <input name="social_media"/>
+      <h10>Tags</h10>
+      <input name="tags"/>
+      <input type="submit" value="PUBLISH"/>
+    </form>
+  </div>
+
+  <div>
+    {% for event in events %}
+    <div class="event-card">
+      <p>
+        <strong>{{ event.event_name }}</strong>
+      </p>
+    <p>{{ event.name_of_org }}</p>
+      <p>{{ event.date }}</p>
+      <p>{{ event.time }}</p>
+      <p>{{ event.location }}</p>
+      <p>{{ event.tags }}</p>
+      <p>{{ event.description }}</p>
+      <p>{{ event.ticket_info }}</p>
+      <p>{{ event.social_media }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
 {% endblock %}
