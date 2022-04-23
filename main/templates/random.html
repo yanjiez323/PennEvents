@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block body %}
+
+<div>
+    {% for tweet in pick %}
+      <p>
+        <strong>{{ tweet.author.username }}</strong> 
+        <i>{{ tweet.created_at }}</i>
+      </p>
+      <p>{{ tweet.body }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <a href="{{request.META.HTTP_REFERER|escape}}">Back</a>
+
+{% endblock %}

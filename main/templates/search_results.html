@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block body %}
+{% if searched %}
+<h1>
+    You Searched For {{ searched }}
+</h1>
+<br/>
+{% for Tweet in tweet_results %}
+    {{ Tweet }}<br/>
+{% endfor %}
+
+{% else %}
+<h1>You failed to search for anything</h1>
+{% endif %}
+  <a href="{{request.META.HTTP_REFERER|escape}}">Back</a>
+
+{% endblock %}
