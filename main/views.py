@@ -101,7 +101,7 @@ def get_random_page(request):
 def search_results(request):
     if request.method == "POST":
         searched = request.POST.get('searched')
-        event_results = Event.objects.filter(event_name__contains= searched)
+        event_results = Event.objects.filter(event_name__contains= searched, name_of_org__contains= searched)
         return render(request, 'search_results.html', 
         {'searched': searched, 
         'event_results': event_results})
