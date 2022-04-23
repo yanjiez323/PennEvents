@@ -93,4 +93,24 @@ Login
     {% endfor %}
   </div>
 
+<div>
+  <form action="{% url 'Pennevents:get_random_page' %}" method="POST">
+    {% csrf_token %}
+    <h2>Random</h2>
+    <input id="submit" type="submit" value="Surprise me" />
+  </form>
+</div>
+
+<div>
+  <form method="POST" action="{% url 'Pennevents:search_results' %}">
+    {% csrf_token %}
+    <h2>Search</h2>
+    <input type="search" placeholder="Search" 
+    aria-label="Search" name= "searched"/>
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+  </form>
+</div>
+
+
+
 {% endblock %}
