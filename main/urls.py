@@ -13,7 +13,7 @@ urlpatterns = [
     path('splash/', views.splash_view, name='splash_view'),
     path('login/', views.login_view, name='login_view'), 
     path('signup/', views.signup_view, name='signup_view'), 
-    path('logout/', views.logout_view, name='logout_view')
+    path('logout/', views.logout_view, name='logout_view'),
     path('getrandompage/', views.get_random_page, name='get_random_page'),
     path('search_results/', views.search_results, name='search_results'),
 ]

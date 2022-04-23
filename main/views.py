@@ -6,8 +6,6 @@ from datetime import datetime
 from main.models import Event
 from django.http import HttpResponse
 from .forms import *
-import random
-
 
 def main_view(request):
     if not request.user.is_authenticated:
@@ -54,6 +52,7 @@ def upload_image_view(request):
         form = ImageForm()
         return render(request, 'main.html', {'form' : form})
 
+
     
 def splash_view(request):
     return render(request, 'splash.html' )
@@ -86,24 +85,3 @@ def delete_view(request):
     if tweet.author == request.user: 
         tweet.delete() 
     return redirect('/')
-
-# Random Button
-
-
-def get_random_page(request):
-    pick = list(Event.objects.all())
-    pick = random.sample(pick, 1)
-
-    return render(request, 'random.html', {'pick': pick})
-
-#Search button
-
-def search_results(request):
-    if request.method == "POST":
-        searched = request.POST.get('searched')
-        event_results = Event.objects.filter(event_name__contains= searched)
-        return render(request, 'search_results.html', 
-        {'searched': searched, 
-        'event_results': event_results})
-    else:
-        return render(request, 'search_results.html', {})
