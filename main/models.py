@@ -18,7 +18,7 @@ class Event(models.Model):
     ticket_info = models.TextField(max_length=100, null=True)
     social_media = models.CharField(max_length=100, null=True)
     name = models.CharField(max_length=50, null=True)
-    upload_image = models.ImageField(upload_to='images/', null=True)
+    upload_image = models.ImageField(upload_to='images/', null=True, blank=True)
 
     
 def __str__(self): 
