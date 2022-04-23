@@ -27,7 +27,7 @@ def event_view(request):
     if not request.user.is_authenticated:
         return redirect('/splash/')
 
-    if request.method == 'POST' and request.POST['name_of_org'] and request.POST['date'] and request.POST['description'] and request.POST['ticket_info'] and request.POST['social_media'] and request.POST['tag_choice'] != "":
+    if request.method == 'POST' and request.POST['name_of_org'] and request.POST['date'] and request.POST['description'] and request.POST['ticket_info'] and request.POST['social_media'] != "":
         event = Event.objects.create(
          event_name = request.POST['event_name'],
          name_of_org = request.POST['name_of_org'],
