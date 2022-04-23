@@ -12,11 +12,17 @@ Login
 
 <div>
     {% for tweet in pick %}
+<div class="event-card">
       <p>
-        <strong>{{ tweet.author.username }}</strong> 
-        <i>{{ tweet.created_at }}</i>
+        <strong>{{ event.event_name }}</strong>
       </p>
-      <p>{{ tweet.body }}</p>
+    <p>{{ event.name_of_org }}</p>
+      <p>{{ event.date }}</p>
+      <p>{{ event.time }}</p>
+      <p>{{ event.location }}</p>
+      <p>{{ event.description }}</p>
+      <p>{{ event.ticket_info }}</p>
+      <p>{{ event.social_media }}</p>
     </div>
     {% endfor %}
   </div>
