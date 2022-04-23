@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from main.models import Tweet
 from datetime import datetime
 from main.models import Event
+from django.http import HttpResponse
+from .forms import *
 
 def main_view(request):
     if not request.user.is_authenticated:
@@ -24,7 +26,7 @@ def event_view(request):
     if not request.user.is_authenticated:
         return redirect('/splash/')
 
-    if request.method == 'POST' and request.POST['name_of_org'] and request.POST['date'] and request.POST['description'] and request.POST['ticket_info'] and request.POST['social_media'] and request.POST['tags'] != "":
+    if request.method == 'POST' and request.POST['name_of_org'] and request.POST['date'] and request.POST['description'] and request.POST['ticket_info'] and request.POST['social_media'] and request.POST['tag_choice'] != "":
         event = Event.objects.create(
          event_name = request.POST['event_name'],
          name_of_org = request.POST['name_of_org'],
@@ -34,12 +36,21 @@ def event_view(request):
          description = request.POST['description'],
          ticket_info = request.POST['ticket_info'],
          social_media = request.POST['social_media'],
-         tag_choices = request.POST['tag_choices']
     )
         event.save()
     
     events = Event.objects.all().order_by('date')
     return render(request, 'main.html', {'events': events})
+
+def upload_image_view(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = ImageForm()
+        return render(request, 'main.html', {'form' : form})
 
     
 def splash_view(request):

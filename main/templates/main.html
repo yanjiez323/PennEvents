@@ -57,10 +57,23 @@ Login
       <input name="ticket_info"/>
       <h9>Social Media</h9>
       <input name="social_media"/>
-      <h10>Tags</h10>
-      <input name="tags"/>
       <input type="submit" value="PUBLISH"/>
     </form>
+
+  </div>
+
+  <div>
+    <head>
+      <meta charset="UTF-8">
+      <title>Upload Image</title>
+  </head>
+  <body>
+      <form method = "post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Upload</button>
+      </form>
+  </body>
   </div>
 
   <div>
@@ -73,7 +86,6 @@ Login
       <p>{{ event.date }}</p>
       <p>{{ event.time }}</p>
       <p>{{ event.location }}</p>
-      <p>{{ event.tags }}</p>
       <p>{{ event.description }}</p>
       <p>{{ event.ticket_info }}</p>
       <p>{{ event.social_media }}</p>
