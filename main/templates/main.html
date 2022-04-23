@@ -58,6 +58,7 @@ Login
     <div class="event-card">
       <p>
         <strong>{{ event.event_name }}</strong>
+        <strong>{{ event.author.username }}</strong>
       </p>
     <p>{{ event.name_of_org }}</p>
       <p>{{ event.date }}</p>
@@ -66,6 +67,9 @@ Login
       <p>{{ event.description }}</p>
       <p>{{ event.ticket_info }}</p>
       <p>{{ event.social_media }}</p>
+      {% if event.author == user %} 
+      <a href="delete?id={{event.id}}">delete event</a> 
+      {% endif %}
     </div>
     {% endfor %}
   </div>

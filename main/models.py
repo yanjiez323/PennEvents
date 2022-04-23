@@ -2,13 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 
-class Tweet(models.Model): 
-    body = models.TextField(max_length=300) 
-    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True) 
-    created_at = models.DateTimeField() 
 
 
 class Event(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     event_name = models.TextField(max_length=100, null=True)
     name_of_org = models.TextField(max_length=300, null=True)
     location = models.TextField(max_length=300, null=True)

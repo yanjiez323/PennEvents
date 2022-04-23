@@ -1,27 +1,12 @@
 from django.shortcuts import render, redirect 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from main.models import Tweet
 from datetime import datetime
 from main.models import Event
 from django.http import HttpResponse
 from .forms import *
 import random
 
-def main_view(request):
-    if not request.user.is_authenticated:
-        return redirect('/splash/')
-
-    if request.method == 'POST' and request.POST['body'] != "":
-        tweet = Tweet.objects.create(
-         body = request.POST['body'],
-         author = request.user,
-         created_at = datetime.now()
-    )
-        tweet.save()
-    
-    tweets = Tweet.objects.all().order_by('-created_at')
-    return render(request, 'main.html', {'tweets': tweets})
 
 def event_view(request):
     if not request.user.is_authenticated:
@@ -29,6 +14,7 @@ def event_view(request):
 
     if request.method == 'POST' and request.POST['name_of_org'] and request.POST['date'] and request.POST['description'] and request.POST['ticket_info'] and request.POST['social_media'] != "":
         event = Event.objects.create(
+         author = request.user,
          event_name = request.POST['event_name'],
          name_of_org = request.POST['name_of_org'],
          date = request.POST['date'],
@@ -82,9 +68,9 @@ def logout_view(request):
     return redirect('/splash')
 
 def delete_view(request): 
-    tweet = Tweet.objects.get(id=request.GET['id']) 
-    if tweet.author == request.user: 
-        tweet.delete() 
+    event = Event.objects.get(id=request.GET['id']) 
+    if event.author == request.user: 
+        event.delete() 
     return redirect('/')
 
 # Random Button
