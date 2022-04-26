@@ -1,91 +1,108 @@
-{% extends 'base.html' %}
-{% load static %}
 
-{% block title %}
-Login
-{% endblock %}
+  {% extends 'base.html' %}
+  {% load static %}
 
-{% block styles %}
-{% endblock %}
+  {% block title %}
+  Login
+  {% endblock %}
 
-{% block body %}
-<h1>hello, {{ user.username }}! </h1>
+  {% block styles %}
+  {% endblock %}
 
-<a href="/logout"><button>Logout</button></a> 
+  {% block body %}
+  <h1>hello, {{ user.username }}! </h1>
+
+  <a href="/logout"><button>Logout</button></a>
 
 
-<div>
-  <form method="POST" action="{% url 'Pennevents:search_results' %}">
-    {% csrf_token %}
-    <h2>Search</h2>
-    <input type="search" placeholder="Search" 
-    aria-label="Search" name= "searched"/>
-    <button class="btn btn-outline-secondary" type="submit">Search</button>
-  </form>
-</div>
+  <div class="searchbar">
+    <form method="POST" action="{% url 'Pennevents:search_results' %}">
+      {% csrf_token %}
+      <h2>Search</h2>
+      <input type="search" placeholder="Search" aria-label="Search" name="searched" />
+      <button class="btn btn-outline-secondary" type="submit">Search</button>
+    </form>
+  </div>
 
-<div>
-  <form action="{% url 'Pennevents:get_random_page' %}" method="POST">
-    {% csrf_token %}
-    <h2>Random</h2>
-    <input id="submit" type="submit" value="Surprise me" />
-  </form>
-</div>
+  <div>
+    <form action="{% url 'Pennevents:get_random_page' %}" method="POST">
+      {% csrf_token %}
+      <h2>Random</h2>
+      <input id="submit" type="submit" value="Surprise me" />
+    </form>
+  </div>
 
 
   <div>
-    <form method ="POST" action="/">
+    <form method="POST" action="/">
       {% csrf_token %}
       <h2>Event Name</h2>
       <input name="event_name" />
       <h3>Name of Organization</h3>
       <input name="name_of_org" />
       <h4>Date</h4>
-      <input name="date" placeholder="MM/DD/YYYY"/>
+      <input name="date" placeholder="MM/DD/YYYY" />
       <h5>Time</h5>
       <input name="time" placeholder="00:00 AM/PM" />
       <h6>Location</h6>
-      <input name="location"/>
+      <input name="location" />
       <h7>Description</h7>
-      <input name="description"/>
+      <input name="description" />
       <h8>Ticket Info</h8>
-      <input name="ticket_info"/>
+      <input name="ticket_info" />
       <h9>Social Media</h9>
-      <input name="social_media"/>
-      <input type="submit" value="PUBLISH"/>
+      <input name="social_media" />
+      <input type="submit" value="PUBLISH" />
     </form>
 
   </div>
 
   <div>
-    <head>
-      <meta charset="UTF-8">
-      <title>Upload Image</title>
-  </head>
-  <body>
-      <form method = "post" enctype="multipart/form-data">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit">Upload</button>
+    <meta charset="UTF-8">
+    <title>Upload Image</title>
+
+    <body>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
       </form>
-  </body>
+    </body>
   </div>
 
   <div>
     {% for event in events %}
     <div class="event-card">
-      <p>
-        <strong>{{ event.event_name }}</strong>
-      </p>
-    <p>{{ event.name_of_org }}</p>
-      <p>{{ event.date }}</p>
-      <p>{{ event.time }}</p>
+      <img src="spark-showcase.png">
+      <div>
+      <div class="card-header">
+        <h2 class="card-event">
+        {{ event.event_name }}
+        </h2>
+        <h3 class="card-org">
+          {{ event.name_of_org }}
+        </h3>
+      </div>
+      <div class="card-tags">
+        <p>TECH</p>
+      </div>
+    </div>
+      <div>
+      <div class="card-time">
+        <p>{{ event.date }}</p>
+        <p>{{ event.time }}</p>
+      </div>
+      <div class="card-location">
       <p>{{ event.location }}</p>
+    </div>
+  </div>
+      <div class="card-info">
       <p>{{ event.description }}</p>
       <p>{{ event.ticket_info }}</p>
       <p>{{ event.social_media }}</p>
-      {% if event.author == user %} 
-      <a href="delete?id={{event.id}}">delete event</a> 
+    </div>
+      {% if event.author == user %}
+      <a href="delete?id={{event.id}}">delete event</a>
       {% endif %}
     </div>
     {% endfor %}
@@ -93,4 +110,4 @@ Login
 
 
 
-{% endblock %}
+  {% endblock %}
