@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} 
+Upload 
+{% endblock%} 
+{% block styles %} 
+{% endblock %} 
+{% block body %}
+<div>
+  <form method="POST" action="/">
+    {% csrf_token %}
+    <h2>Event Name</h2>
+    <input name="event_name" />
+    <h3>Name of Organization</h3>
+    <input name="name_of_org" />
+    <h4>Date</h4>
+    <input name="date" placeholder="MM/DD/YYYY" />
+    <h5>Time</h5>
+    <input name="time" placeholder="00:00 AM/PM" />
+    <h6>Location</h6>
+    <input name="location" />
+    <h7>Description</h7>
+    <input name="description" />
+    <h8>Ticket Info</h8>
+    <input name="ticket_info" />
+    <h9>Social Media</h9>
+    <input name="social_media" />
+    <input type="submit" value="PUBLISH" />
+  </form>
+</div>
+
+<div>
+  <meta charset="UTF-8" />
+  <title>Upload Image</title>
+
+  <body>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Upload</button>
+    </form>
+  </body>
+</div>
+{% endblock %}

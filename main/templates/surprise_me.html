@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} 
+Upload 
+{% endblock%} 
+{% block styles %} 
+{% endblock %} 
+{% block body %}
+<div>
+    <form action="{% url 'Pennevents:get_random_page' %}" method="POST">
+      {% csrf_token %}
+      <h2>Random</h2>
+      <input id="submit" type="submit" value="Surprise me" />
+    </form>
+  </div>
+{% endblock %}

@@ -93,3 +93,13 @@ def search_results(request):
         'event_results': event_results})
     else:
         return render(request, 'search_results.html', {})
+
+# Upload page
+
+def upload(request):
+    return render(request, 'upload.html', {})
+
+# Surprise me page
+
+def surprise_me(request):
+    return render(request, 'surprise_me.html', {})

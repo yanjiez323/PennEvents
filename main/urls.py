@@ -17,6 +17,8 @@ urlpatterns = [
     path('delete/', views.delete_view, name='delete_view'),
     path('getrandompage/', views.get_random_page, name='get_random_page'),
     path('search_results/', views.search_results, name='search_results'),
+    path('upload/', views.upload, name="upload"),
+    path('surprise_me/', views.surprise_me, name="surprise_me"),
 ]
 
 if settings.DEBUG:
