@@ -1,35 +1,48 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block title %} 
-Upload 
-{% endblock%} 
-{% block styles %} 
-{% endblock %} 
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Upload
+{% endblock%}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/upload.css' %}" type="text/css" />
+{% endblock %}
 {% block body %}
-<div>
-  <form method="POST" action="/">
-    {% csrf_token %}
-    <h2>Event Name</h2>
-    <input name="event_name" />
-    <h3>Name of Organization</h3>
-    <input name="name_of_org" />
-    <h4>Date</h4>
-    <input name="date" placeholder="MM/DD/YYYY" />
-    <h5>Time</h5>
-    <input name="time" placeholder="00:00 AM/PM" />
-    <h6>Location</h6>
-    <input name="location" />
-    <h7>Description</h7>
-    <input name="description" />
-    <h8>Ticket Info</h8>
-    <input name="ticket_info" />
-    <h9>Social Media</h9>
-    <input name="social_media" />
-    <input type="submit" value="PUBLISH" />
-  </form>
+
+<div class="Upload-form">
+
+  <div style="display: inline-block; width: 30%; background-color: blue; vertical-align: top">
+
+    <h3>Event Name</h3>
+    text here>
+
+  </div>
+
+  <div style="display: inline-block; width: 65%; background-color: red; vertical-align: top">
+    <form method="POST" action="/">
+      {% csrf_token %}
+      <input name="event_name" />
+      <h3>Name of Organization</h3>
+      <input name="name_of_org" />
+      <h3>Date</h3>
+      <input name="date" placeholder="MM/DD/YYYY" />
+      <h3>Time</h3>
+      <input name="time" placeholder="00:00 AM/PM" />
+      <h3>Location</h3>
+      <input name="location" />
+      <h3>Description</h3>
+      <input name="description" />
+      <h3>Ticket Info</h3>
+      <input name="ticket_info" />
+      <h3>Social Media</h3>
+      <input name="social_media" />
+      <input type="submit" value="PUBLISH">
+    </form>
+  </div>
+
+
 </div>
 
-<div>
+<div class="Upload-image">
   <meta charset="UTF-8" />
   <title>Upload Image</title>
 
