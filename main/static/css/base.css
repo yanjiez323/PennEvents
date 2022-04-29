@@ -25,6 +25,7 @@ body {
 
 nav {
     box-shadow: 0px 4px 10px #444;
+    
 }
 
 nav a {
@@ -37,7 +38,7 @@ nav a:hover {
 
 .event-card {
     border-radius: 58px;
-    background-color: white;
+    background-color: #B8D7FC;
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
@@ -65,7 +66,7 @@ nav a:hover {
 }
 
 .card-tags {
-    background-color: #B8D7FC;
+    background-color: #c1d8f5;
     border-radius: 18px;
     width: fit-content;
     padding: 0px 20px;
@@ -78,3 +79,31 @@ nav a:hover {
 .card-info {
     display: none;
 }
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+.place {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-top: 25px;
+  }
+  
+.surprise-me {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-top: 25px;
+  }
+  
+.upload {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-top: 25px;
+  }
+

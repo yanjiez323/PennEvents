@@ -4,8 +4,8 @@
     box-shadow: 0px 4px 10px #444;
     padding: 30px;
     position: absolute;
-    width: 393.5px;
-    height: 315.5px;
+    width: fit-content;
+    height: fit-content;
     left: 200px;
     top: 242px;
 }
@@ -16,8 +16,8 @@
     box-shadow: 0px 4px 10px #444;
     padding: 30px;
     position: absolute;
-    width: 112.17px;
-    height: 261.01px;
+    width: fit-content;
+    height: fit-content;
     left: 725px;
     top: 243.45px;
 }
