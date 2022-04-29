@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 * {
-    font-family: 'Avenir', 'Roboto', sans-serif;
+    font-family: 'Josefin Sans', 'Avenir', 'Roboto', sans-serif;
 }
 
 html,
 body {
-    background-color: #FFFDF9;
+    /* background-color: #FFFDF9; */
     margin: 0px;
     padding: 0px;
 }
@@ -49,6 +51,10 @@ nav a:hover {
     font-size: 40px;
 }
 
+.card-time {
+    font-size: 40px;
+}
+
 .card-org {
     margin-top: 0;
     font-size: 30px;
@@ -63,6 +69,10 @@ nav a:hover {
     border-radius: 18px;
     width: fit-content;
     padding: 0px 20px;
+}
+
+.card-delete {
+    padding: 0px;
 }
 
 .card-info {
