@@ -11,7 +11,6 @@ Upload
 <div class="Upload-form">
 
   <div class="Upload-names">
-
     <h4>Event Name</h4>
     <h4>Name of Org</h4>
     <h4>Date</h4>
@@ -33,11 +32,15 @@ Upload
       <input name="description" />
       <input name="ticket_info" placeholder="Link or Venmo handle" />
       <input name="social_media" />
+      <div class="Upload-publish">
+          <input type="submit" value="PUBLISH">
+      </div>
     </form>
   </div>
 
   <div class="Upload-publish">
     <form method="POST" action="/">
+      {% csrf_token %}
       <input type="submit" value="PUBLISH">
     </form>
   </div>
