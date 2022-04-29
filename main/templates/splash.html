@@ -1,15 +1,15 @@
 
 {% load static %}
 
-{% block title %} SPLASH {% endblock%}
+{% block title %} {% endblock%}
 
 {% block styles %} 
 <link rel="stylesheet" href="{% static 'css/splash.css' %}" type="text/css" />
 {% endblock %}
 
 {% block body %}
-<div>
-    <h1>REGISTER / LOGIN</h1>
+<div class="Login">
+    <img src="../static/images/logo.png" />
     <div>
         <h2>Sign Up</h2>
         <form method="POST" action="/signup/">
