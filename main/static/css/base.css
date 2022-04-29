@@ -25,7 +25,6 @@ body {
 
 nav {
     box-shadow: 0px 4px 10px #444;
-    
 }
 
 nav a {
@@ -38,12 +37,12 @@ nav a:hover {
 
 .event-card {
     border-radius: 58px;
-    background-color: #B8D7FC;
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
-    box-shadow: 0px 4px 4px #444;
+    box-shadow: 0px 2px 2px 2px #444;
     padding: 30px;
+    margin-top: 25px;
 }
 
 .card-event {
@@ -85,6 +84,7 @@ nav a:hover {
     flex-direction: row;
     flex-wrap:wrap;
     justify-content: space-around;
+
 }
 .place {
     font-size: 20px;
