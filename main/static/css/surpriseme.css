@@ -2,27 +2,24 @@
 
 
 .random {
+  display: flex;
   height: 435px;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  width: 840px;
 }
 
 .group-23 {
-
   display: flex;
-  height: 110px;
-  left: 0;
-  min-width: 505px;
+  justify-content: center;
+  top: 210px;
   position: absolute;
-  top: 79px;
 }
 
-
 .group-24 {
-  height: 435px;
-  left: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 0;
-  width: 779px;
 }
 

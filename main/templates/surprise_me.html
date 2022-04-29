@@ -11,16 +11,15 @@ Upload
   
   <img class="group-24"
   src="https://anima-uploads.s3.amazonaws.com/projects/6265afbb8c437962c040a1ed/releases/6269a3b752ae24167892e5fa/img/group-24@1x.svg"
-  />
+  style="width:32em; height:20em;" />
   
   <div class="group-23">
     <form action="{% url 'Pennevents:get_random_page' %}" method="POST">
       {% csrf_token %}
       <h2>
-      <input id="submit" type="submit" value="Surprise me" />
+      <input id="submit" type="submit" value="Surprise me 🎁" style="width:20em; height:3em; color: white; background-color: #BACF99; border-radius: 20px; font-size: 20;"  />
       </h2>
     </form>
   </div>
-
 </div>
 {% endblock %}
