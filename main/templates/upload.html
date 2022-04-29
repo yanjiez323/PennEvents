@@ -10,31 +10,34 @@ Upload
 
 <div class="Upload-form">
 
-  <div style="display: inline-block; width: 30%; background-color: blue; vertical-align: top">
+  <div class="Upload-names">
 
-    <h3>Event Name</h3>
-    text here>
-
+    <h4>Event Name</h4>
+    <h4>Name of Org</h4>
+    <h4>Date</h4>
+    <h4>Time</h4>
+    <h4>Location</h4>
+    <h4>Description</h4>
+    <h4>Ticket Info</h4>
+    <h4>Social Media</h4>
   </div>
 
-  <div style="display: inline-block; width: 65%; background-color: red; vertical-align: top">
+  <div class="Upload-fields">
     <form method="POST" action="/">
       {% csrf_token %}
       <input name="event_name" />
-      <h3>Name of Organization</h3>
       <input name="name_of_org" />
-      <h3>Date</h3>
       <input name="date" placeholder="MM/DD/YYYY" />
-      <h3>Time</h3>
       <input name="time" placeholder="00:00 AM/PM" />
-      <h3>Location</h3>
       <input name="location" />
-      <h3>Description</h3>
       <input name="description" />
-      <h3>Ticket Info</h3>
-      <input name="ticket_info" />
-      <h3>Social Media</h3>
+      <input name="ticket_info" placeholder="Link or Venmo handle" />
       <input name="social_media" />
+    </form>
+  </div>
+
+  <div class="Upload-publish">
+    <form method="POST" action="/">
       <input type="submit" value="PUBLISH">
     </form>
   </div>
@@ -45,13 +48,12 @@ Upload
 <div class="Upload-image">
   <meta charset="UTF-8" />
   <title>Upload Image</title>
+  <h2>Upload Cover Picture</h2>
 
-  <body>
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %} {{ form.as_p }}
       <input type="file" id="my-file" name="upload_image">
-      <input type="submit">Upload</input>
+      <input type="submit"></input>
     </form>
-  </body>
 </div>
 {% endblock %}
