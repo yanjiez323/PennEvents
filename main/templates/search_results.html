@@ -14,8 +14,34 @@ Results
     You Searched For {{ searched }}
 </h1>
 <br/>
-{% for Event in event_results %}
-    {{ Event.event_name }}<br/>
+{% for event in event_results %}
+<div class="event-card">
+  <img src="../static/images/spark-showcase.png" />
+  <div>
+    <div class="card-header">
+      <h2 class="card-event">{{ event.event_name }}</h2>
+      <h3 class="card-org">{{ event.name_of_org }}</h3>
+    </div>
+    <div class="card-tags">
+      <p>TECH</p>
+    </div>
+  </div>
+  <div>
+    <div class="card-time">
+      <p>{{ event.date }}</p>
+      <p>{{ event.time }}</p>
+    </div>
+    <div class="card-location">
+      <p>{{ event.location }}</p>
+    </div>
+  </div>
+  <div class="card-info">
+    <p>{{ event.description }}</p>
+    <p>{{ event.ticket_info }}</p>
+    <p>{{ event.social_media }}</p>
+  </div>
+</div>
+<br/>
 {% endfor %}
 
 {% else %}
