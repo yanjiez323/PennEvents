@@ -32,16 +32,13 @@ Upload
       <input name="description" />
       <input name="ticket_info" placeholder="Link or Venmo handle" />
       <input name="social_media" />
-      <div class="Upload-publish">
-          <input type="submit" value="PUBLISH">
-      </div>
+      <input type="submit" value="PUBLISH">
     </form>
   </div>
 
   <div class="Upload-publish">
     <form method="POST" action="/">
-      {% csrf_token %}
-      <input type="submit" value="PUBLISH">
+
     </form>
   </div>
 
