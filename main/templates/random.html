@@ -6,36 +6,37 @@ Login
 {% endblock %}
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'randompage.css' %}" type="text/css" />
 {% endblock %}
 
 {% block body %}
 
-<div class="surprise-me-landing-pagescreen">
-  <div class="group-37">
-    <div class="overlap-group">
-      <img class="group-36" src="Group 36.png" />
-      <h1 class="placejosefinsans-normal-black-40px">home</h1>
-      <div class="surprise-me">surprise me</div>
-      <div class="uploadjosefinsans-normal-black-40px">upload</div>
-    </div>
-  </div>
-  <img class="group-24" src="Group 24.png" />
-</div>
-
 <div>
     {% for event in pick %}
-<div class="event-card">
-      <p>
-        <strong>{{ event.event_name }}</strong>
-      </p>
-    <p>{{ event.name_of_org }}</p>
-      <p>{{ event.date }}</p>
-      <p>{{ event.time }}</p>
-      <p>{{ event.location }}</p>
-      <p>{{ event.description }}</p>
-      <p>{{ event.ticket_info }}</p>
-      <p>{{ event.social_media }}</p>
+    <div class="event-card">
+      <img src="../static/images/spark-showcase.png" />
+      <div>
+        <div class="card-header">
+          <h2 class="card-event">{{ event.event_name }}</h2>
+          <h3 class="card-org">{{ event.name_of_org }}</h3>
+        </div>
+        <div class="card-tags">
+          <p>TECH</p>
+        </div>
+      </div>
+      <div>
+        <div class="card-time">
+          <p>{{ event.date }}</p>
+          <p>{{ event.time }}</p>
+        </div>
+        <div class="card-location">
+          <p>{{ event.location }}</p>
+        </div>
+      </div>
+      <div class="card-info">
+        <p>{{ event.description }}</p>
+        <p>{{ event.ticket_info }}</p>
+        <p>{{ event.social_media }}</p>
+      </div>
     </div>
     {% endfor %}
   </div>
